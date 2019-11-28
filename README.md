@@ -1,7 +1,7 @@
 # Log Analysis Tool v1.0#
 
 ## Overview
-In this project, I build a reporting tool that will use information from news database to discover what kind of articles the readers like.The database contains newspaper's authors, articles and web server log. Using these tables the tool will analyz the site's user activity.
+In this project, I build a reporting tool that will use information from news database to discover what kind of articles the readers like.The database contains newspaper's authors, articles and web server log. Using these tables the tool will analyze the site's user activity.
 
 ## Database Schema
 New database has three tables which they:
@@ -27,9 +27,9 @@ New database has three tables which they:
 
 ## Analysis Options
 The tool currently can perfrom three types of analysis:
-- Get the most popular three articles of all time
-- Get the most popular article authors of all time
-- Get which days did more than 1% of requests lead to errors
+1. Get the most popular three articles of all time
+2. Get the most popular article authors of all time
+3. Get which days did more than 1% of requests lead to errors
 
 ## Prerequisites
 1. Python 3
@@ -40,17 +40,17 @@ The tool currently can perfrom three types of analysis:
 ## Setup
 1. Download/Clone the repository
 2. Install Psycopg2 module by runing the following command
-   > pip install psycopg2
+   `pip install psycopg2`
 3. Run the following command to load the data:
-   > psql -d news -f newsdata.sql
+   `psql -d news -f newsdata.sql`
 4. Create the following view that count all requests valid and invalid: 
-   > CREATE VIEW total_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS total_requests
-   > FROM log GROUP BY date ORDER BY date;
+   `CREATE VIEW total_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS total_requests`
+   `FROM log GROUP BY date ORDER BY date;`
 5. Create the following view that count invalid requests with status code 404:
-   > CREATE VIEW invalid_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS invalid_requests
-   > FROM log WHERE status LIKE '%404%' GROUP BY date ORDER BY date;
+   `CREATE VIEW invalid_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS invalid_requests`
+   `FROM log WHERE status LIKE '%404%' GROUP BY date ORDER BY date;`
 6. Run main.py 
-   > python main.py
+   `python main.py`
 
 ## Output
 See the attached file
