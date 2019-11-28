@@ -47,21 +47,6 @@ def query2():
 
 
 def query3():
-
-    # Count all requests valid and invalid
-    view = """
-    CREATE VIEW total_req_view AS
-    SELECT time::timestamp::date AS date,
-    COUNT(*) AS total_requests
-    FROM log
-    GROUP BY date
-    ORDER BY date;
-    """
-    # Count invalid requests with status code 404
-    view = """
-    
-    """
-
     # Get days with more than 1% of requests lead to errors
     query = """
     SELECT total_req_view.date, 
