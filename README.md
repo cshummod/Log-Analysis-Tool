@@ -1,10 +1,10 @@
-# Log Analysis Tool v1.0#
+# Log Analysis Tool v1.0
 
 ## Overview
 In this project, I build a reporting tool that will use information from news database to discover what kind of articles the readers like.The database contains newspaper's authors, articles and web server log. Using these tables the tool will analyze the site's user activity.
 
 ## Database Schema
-New database has three tables which they:
+News database has three tables:
 - authors
   - name -> text
   - bio -> text
@@ -31,9 +31,9 @@ The tool currently can perfrom three types of analysis:
 2. Get the most popular article authors of all time
 3. Get which days did more than 1% of requests lead to errors
 
-## Prerequisites
+## Requirements 
 1. Python 3
-2. Postgres SQL
+2. PostgreSQL
 3. Psycopg2
 4. News Database
 
@@ -47,12 +47,10 @@ The tool currently can perfrom three types of analysis:
    `psql -d news -f newsdata.sql`
 4. Create the following view that count all requests valid and invalid: 
    
-   `CREATE VIEW total_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS total_requests`
-   `FROM log GROUP BY date ORDER BY date;`
+   `CREATE VIEW total_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS total_requests FROM log GROUP BY date ORDER BY date;`
 5. Create the following view that count invalid requests with status code 404:
    
-   `CREATE VIEW invalid_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS invalid_requests`
-   `FROM log WHERE status LIKE '%404%' GROUP BY date ORDER BY date;`
+   `CREATE VIEW invalid_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS invalid_requests FROM log WHERE status LIKE '%404%' GROUP BY date ORDER BY date;`
 6. Run main.py 
    
    `python main.py`
