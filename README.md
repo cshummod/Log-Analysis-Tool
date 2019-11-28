@@ -1,10 +1,10 @@
-# Log Analysis Tool v1.0#
+# Log Analysis Tool v1.0
 
 ## Overview
 In this project, I build a reporting tool that will use information from news database to discover what kind of articles the readers like.The database contains newspaper's authors, articles and web server log. Using these tables the tool will analyze the site's user activity.
 
 ## Database Schema
-New database has three tables which they:
+News database has three tables:
 - authors
   - name -> text
   - bio -> text
