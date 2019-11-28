@@ -31,9 +31,9 @@ The tool currently can perfrom three types of analysis:
 2. Get the most popular article authors of all time
 3. Get which days did more than 1% of requests lead to errors
 
-## Prerequisites
+## Requirements 
 1. Python 3
-2. Postgres SQL
+2. PostgreSQL
 3. Psycopg2
 4. News Database
 
