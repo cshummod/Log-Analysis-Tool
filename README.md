@@ -47,12 +47,10 @@ The tool currently can perfrom three types of analysis:
    `psql -d news -f newsdata.sql`
 4. Create the following view that count all requests valid and invalid: 
    
-   `CREATE VIEW total_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS total_requests`
-   `FROM log GROUP BY date ORDER BY date;`
+   `CREATE VIEW total_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS total_requests FROM log GROUP BY date ORDER BY date;`
 5. Create the following view that count invalid requests with status code 404:
    
-   `CREATE VIEW invalid_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS invalid_requests`
-   `FROM log WHERE status LIKE '%404%' GROUP BY date ORDER BY date;`
+   `CREATE VIEW invalid_req_view AS SELECT time::timestamp::date AS date, COUNT(*) AS invalid_requests FROM log WHERE status LIKE '%404%' GROUP BY date ORDER BY date;`
 6. Run main.py 
    
    `python main.py`
