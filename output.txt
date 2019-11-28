@@ -1,0 +1,22 @@
+##-------- Logs Analysis Tool --------##
+----------------------------------------
+
+---- Most popular three articles of all time ----
+         Title                        |  Views
+---------------------------------+---------
+Candidate is jerk, alleges rival |   338647
+Bears love berries, alleges bear |   253801
+Bad things gone, say good people |   170098
+
+---- Most popular article authors of all time ----
+         Author          |  Views
+------------------------+---------
+Ursula La Multa         | 507594
+Rudolf von Treppenwitz  | 423457
+Anonymous Contributor   | 170098
+Markoff Chaney  | 84557
+
+---- Days that have more than 1\% of requests lead to errors ----
+         Day         |   Error Percentage
+--------------------+--------------------
+2016-07-17      |     2.2627
