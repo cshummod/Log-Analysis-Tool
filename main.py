@@ -40,7 +40,7 @@ def top_three_articles():
 
     result = exec_query(query)
 
-    print('\n---- Most popular three articles of all time ----')
+    print('\n-- Most popular three articles of all time --')
     print("\t Title \t \t\t |  Views")
     print("---------------------------------+---------")
     for r in result:
@@ -65,7 +65,7 @@ def most_popular_authors():
 
     result = exec_query(query)
 
-    print('\n---- Most popular article authors of all time ----')
+    print('\n-- Most popular article authors of all time --')
     print("\t Author\t\t\t |  \tViews")
     print("---------------------------------+------------------")
     for r in result:
